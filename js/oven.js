@@ -1,17 +1,13 @@
-'use strict'
-
 class Oven extends Device {
     constructor(name, temperature, modes) {
         super(name);
-        this._temperature = temperature;
-        this._modes = modes;
+        this.temperature = temperature;
+        this.modes = modes;
     }
-
-    get temperature() {
-        return this._temperature;
+    getTemperature() {
+        return this.temperature;
     }
-    
-    get modes() {
-        return this._modes;
+    getModes() {
+        return this.modes;
     }
 }

@@ -1,21 +1,29 @@
 class Device {
-    constructor(name) {
+    name: string;
+    state: boolean;
+
+    constructor(name: string) {
         this.name = name;
         this.state = false;
     }
-    setName(name) {
+
+    setName(name: string): void {
         this.name = name;
     }
-    getName() {
+
+    getName(): string {
         return this.name;
     }
-    on() {
+
+    on(): void {
         this.state = true;
     }
-    off() {
+
+    off(): void {
         this.state = false;
     }
-    getState() {
+    
+    getState(): boolean {
         return this.state;
     }
 }

@@ -1,53 +1,42 @@
-'use strict'
-
 class Home {
     constructor(name) {
-        this._name = name;
-        this._devices = [];
+        this.name = name;
+        this.devices = [];
     }
-
-    set name(name) {
-        this._name = name;
+    setName(name) {
+        this.name = name;
     }
-
-    get name() {
-        return this._name;
+    getName() {
+        return this.name;
     }
-
     addDevice(device) {
-        this._devices.push(device);
+        this.devices.push(device);
     }
-
-    get devices() {
-        return this._devices;
+    getDevices() {
+        return this.devices;
     }
-
     getDeviceByName(name) {
-        return this._devices.find( device => device.name === name )
+        return this.devices.find((device) => device['name'] === name);
     }
-
     deviceOn(name, delay, callback) {
         const device = this.getDeviceByName(name);
         setTimeout(() => {
             device.on();
-            callback(device)
-        }, delay)
+            //callback(device)
+        }, delay);
     }
-
     deviceOff(name, delay, callback) {
-        const device = this.getDeviceByName(name);
-        setTimeout(() => {
-            device.off();
-            callback(device)
-        }, delay)
+        //const device: object = this.getDeviceByName(name);
+        //setTimeout(() => {
+        //device.off();
+        // callback(device)
+        //}, delay)
     }
-
     removeDevice(name) {
-        const index = this._devices.indexOf(this.getDeviceByName(name));
-        this._devices.splice(index, 1);
+        //const index: number = this.devices.indexOf(this.getDeviceByName(name));
+        //this.devices.splice(index, 1);
     }
-
     removeAllDevices() {
-        this._devices = [];
+        this.devices = [];
     }
 }

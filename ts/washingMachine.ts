@@ -1,17 +1,26 @@
 class WashingMachine extends Device {
-    constructor(name, temperature, modes) {
+    name: string;
+    temperature: number;
+    modes: string[];
+    maxSpinSpeed: number;
+    constructor(name: string, temperature: number, modes: string[]) {
         super(name);
         this.maxSpinSpeed = 1000;
         this.temperature = temperature;
         this.modes = modes;
     }
-    setMaxSpinSpeed(maxSpinSpeed) {
+
+    setMaxSpinSpeed(maxSpinSpeed: number): void {
         this.maxSpinSpeed = maxSpinSpeed;
     }
-    getTemperature() {
+
+    getTemperature(): number {
         return this.temperature;
     }
-    getModes() {
+    
+    getModes(): string[] {
         return this.modes;
     }
 }
+
+

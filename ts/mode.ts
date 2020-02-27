@@ -1,31 +1,39 @@
 class Mode {
-    constructor(modes) {
+    modes: string[];
+    current: number; 
+
+    constructor(modes: string[]) {
         this.modes = modes;
         this.current = 0;
     }
-    setModes(modes) {
+
+    setModes(modes: string[]): void {
         this.modes = modes;
     }
-    getModes() {
+
+    getModes(): string[] {
         return this.modes;
     }
-    getCurrentMode() {
+
+    getCurrentMode(): string {
         return this.modes[this.current];
     }
-    next() {
+
+    next(): void {
         if (this.current === this.modes.length - 1) {
             this.current = 0;
-        }
-        else {
+        } else {
             this.current++;
         }
     }
-    prev() {
+    
+    prev(): void {
         if (this.current === 0) {
             this.current = this.modes.length - 1;
-        }
-        else {
+        } else {
             this.current--;
         }
     }
 }
+
+

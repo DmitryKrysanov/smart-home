@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+      "target": "es6",
+      "module": "commonjs",
+    //   "sourceMap": true
+       "outDir": "js/"
+    }
+
+    // "compilerOptions": {
+    //     "target": "es5",
+    //     "removeComments": true,
+    //     "outDir": "js",
+    //     "sourceMap": true,
+    //     "outFile": "main.js"
+    // }
+  }

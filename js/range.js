@@ -1,62 +1,54 @@
-'use strict'
-
-class Range {
+class RangeTemp {
     constructor(min, max, current, step) {
-        this._min = min;
-        this._max = max;
-        this._current = current;
-        this._step = step;
+        this.min = min;
+        this.max = max;
+        this.current = current;
+        this.step = step;
     }
-
-    set min(min) {
-        this._min = min;
+    setMin(min) {
+        this.min = min;
     }
-
-    get min() {
-        return this._min;
+    getMin() {
+        return this.min;
     }
-
-    set max(max) {
-        this._max = max;
+    setMax(max) {
+        this.max = max;
     }
-
-    get max() {
-        return this._max;
+    getMax() {
+        return this.max;
     }
-
-    set current(current) {
-        this._current = current;
+    setCurrent(current) {
+        this.current = current;
     }
-
-    get current() {
-        return this._current;
+    getCurrent() {
+        return this.current;
     }
-
-    set step(step) {
-        this._step = step;
+    setStep(step) {
+        this.step = step;
     }
-
-    get step() {
-        return this._step;
+    getStep() {
+        return this.step;
     }
-
     increase() {
-        if (this._current !== this._max) {
-            if ( (this._current + this._step) >= this._max) {
-                this._current = this._max;
-            } else {
-                this._current += this._step;
+        if (this.current !== this.max) {
+            if ((this.current + this.step) >= this.max) {
+                this.current = this.max;
+            }
+            else {
+                this.current += this.step;
             }
         }
     }
-    
     decrease() {
-        if (this._current !== this._min) {
-            if ( (this._current - this._step) <= this._min) {
-                this._current = this._min;
-            } else {
-                this._current -= this._step;
+        if (this.current !== this.min) {
+            if ((this.current - this.step) <= this.min) {
+                this.current = this.min;
+            }
+            else {
+                this.current -= this.step;
             }
         }
     }
 }
+// let range = new RangeTemp(1, 2, 3, 4);
+// console.log(range);
