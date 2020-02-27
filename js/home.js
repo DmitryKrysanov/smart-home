@@ -1,39 +1,53 @@
 'use strict'
 
-function Home(name) {
-    this._name = name;
-    this._devices = [];
-}
-
-Home.prototype.setName = function (name) {
-    this._name = name;
-}
-
-Home.prototype.getName = function () {
-    return this._name;
-}
-
-Home.prototype.addDevice = function (device) {
-    this._devices.push(device);
-}
-
-Home.prototype.getDevices = function () {
-    return this._devices;
-}
-
-Home.prototype.getDeviceByName = function (name) {
-    for (var i = 0; i < this._devices.length; i++) {
-        if (this._devices[i].getName() === name) {
-            return this._devices[i];
-        }
+class Home {
+    constructor(name) {
+        this._name = name;
+        this._devices = [];
     }
-}
 
-Home.prototype.removeDevice = function (name) {
-    var index = this._devices.indexOf(this.getDeviceByName(name));
-    this._devices.splice(index, 1);
-}
+    set name(name) {
+        this._name = name;
+    }
 
-Home.prototype.removeAllDevices = function () {
-    this._devices = [];
+    get name() {
+        return this._name;
+    }
+
+    addDevice(device) {
+        this._devices.push(device);
+    }
+
+    get devices() {
+        return this._devices;
+    }
+
+    getDeviceByName(name) {
+        return this._devices.find( device => device.name === name )
+    }
+
+    deviceOn(name, delay, callback) {
+        const device = this.getDeviceByName(name);
+        setTimeout(() => {
+            device.on();
+            callback(device)
+        }, delay)
+    }
+
+    deviceOff(name, delay, callback) {
+        const device = this.getDeviceByName(name);
+        setTimeout(() => {
+            device.off();
+            callback(device)
+        }, delay)
+    }
+
+    removeDevice(name) {
+        const index = this._devices.indexOf(this.getDeviceByName(name));
+        this._devices.splice(index, 1);
+    }
+
+    removeAllDevices() {
+        this._devices = [];
+    }
 }

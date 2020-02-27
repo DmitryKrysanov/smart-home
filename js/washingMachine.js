@@ -1,23 +1,24 @@
 'use strict'
 
-function WashingMachine(name, temperature, modes) {
-    Device.call(this, name);
-    this._maxSpinSpeed = 1000;
-    this._temperature = temperature;
-    this._modes = modes;
+class WashingMachine extends Device {
+    constructor(name, temperature, modes) {
+        super(name);
+        this._maxSpinSpeed = 1000;
+        this._temperature = temperature;
+        this._modes = modes;
+    }
+
+    set maxSpinSpeed(maxSpinSpeed) {
+        this._maxSpinSpeed = maxSpinSpeed;
+    }
+
+    get temperature() {
+        return this._temperature;
+    }
+    
+    get modes() {
+        return this._modes;
+    }
 }
 
-WashingMachine.prototype = Object.create(Device.prototype);
-WashingMachine.prototype.constructor = Device;
 
-WashingMachine.prototype.setMaxSpinSpeed = function (maxSpinSpeed) {
-    this._maxSpinSpeed = maxSpinSpeed;
-}
-
-WashingMachine.prototype.getTemperature = function () {
-    return this._temperature;
-}
-
-WashingMachine.prototype.getModes = function () {
-    return this._modes;
-}
