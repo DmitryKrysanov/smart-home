@@ -50,5 +50,3 @@ class RangeTemp {
         }
     }
 }
-// let range = new RangeTemp(1, 2, 3, 4);
-// console.log(range);

@@ -1,4 +1,9 @@
-class Mode {
+interface IMode {
+    modes: string[];
+    current: number; 
+}
+
+class Mode implements IMode {
     modes: string[];
     current: number; 
 
@@ -35,5 +40,3 @@ class Mode {
         }
     }
 }
-
-

@@ -27,8 +27,9 @@ class Home {
         return this.devices.find( (device: object) => device['name'] === name )
     }
 
-    deviceOn(name: string, delay: number, callback): void {
-        const device: object = this.getDeviceByName(name);
+    deviceOn(name: string, delay: number, callback: () => void): void {
+        const device: any = this.getDeviceByName(name);  //any should be deleted
+        console.log(typeof(device))
         setTimeout(() => {
             device.on();
             //callback(device)
@@ -36,16 +37,16 @@ class Home {
     }
 
     deviceOff(name: string, delay: number, callback) {
-        //const device: object = this.getDeviceByName(name);
-        //setTimeout(() => {
-            //device.off();
+        const device: any = this.getDeviceByName(name);  //any should be deleted
+        setTimeout(() => {
+            device.off();
             // callback(device)
-        //}, delay)
+        }, delay)
     }
 
     removeDevice(name: string) {
-        //const index: number = this.devices.indexOf(this.getDeviceByName(name));
-        //this.devices.splice(index, 1);
+        const index: number = this.devices.indexOf(this.getDeviceByName(name));
+        this.devices.splice(index, 1);
     }
 
     removeAllDevices(): void {

@@ -1,4 +1,9 @@
-class Device {
+interface IDevice {
+    name: string;
+    state: boolean;
+}
+
+class Device implements IDevice {
     name: string;
     state: boolean;
 

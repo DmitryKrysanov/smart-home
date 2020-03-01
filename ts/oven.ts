@@ -1,7 +1,8 @@
 class Oven extends Device {
     temperature: IRange;
-    modes: object;
-    constructor(name: string, temperature: IRange, modes: object) {
+    modes: IMode;
+
+    constructor(name: string, temperature: IRange, modes: IMode) {
         super(name);
         this.temperature = temperature;
         this.modes = modes;
@@ -15,3 +16,4 @@ class Oven extends Device {
          return this.modes;
      }
 }
+
