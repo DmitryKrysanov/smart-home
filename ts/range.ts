@@ -3,16 +3,16 @@ interface IRange {
     max: number;
     current: number;
     step: number;
-    setMin(min: number): void;
-    getMin(): number;
-    setMax(max: number): void;
-    getMax(): number;
-    setCurrent(current: number): void;
-    getCurrent(): number;
-    setStep(step: number): void;
-    getStep(): number;
-    increase(): void;
-    decrease(): void;
+    // setMin(min: number): void;
+    // getMin(): number;
+    // setMax(max: number): void;
+    // getMax(): number;
+    // setCurrent(current: number): void;
+    // getCurrent(): number;
+    // setStep(step: number): void;
+    // getStep(): number;
+    // increase(): void;
+    // decrease(): void;
 }
 
 class RangeTemp implements IRange {
