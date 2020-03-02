@@ -15,11 +15,11 @@ class WashingMachine extends Device {
         this.maxSpinSpeed = maxSpinSpeed;
     }
 
-    getTemperature(): object {
+    getTemperature(): IRange {
         return this.temperature;
     }
     
-    getModes(): object {
+    getModes(): IMode {
         return this.modes;
     }
 }

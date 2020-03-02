@@ -8,11 +8,11 @@ class Oven extends Device {
         this.modes = modes;
     }
 
-    getTemperature(): object {
+    getTemperature(): IRange {
         return this.temperature;
     }
 
-     getModes(): object {
+     getModes(): IMode {
          return this.modes;
      }
 }

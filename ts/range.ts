@@ -1,15 +1,8 @@
-interface IRange {
-    min: number;
-    max: number;
-    current: number;
-    step: number;
-}
-
 class RangeTemp implements IRange {
-    min: number;
-    max: number;
-    current: number;
-    step: number;
+    private min: number;
+    private max: number;
+    private current: number;
+    private step: number;
 
     constructor(min: number, max: number, current: number, step: number) {
         this.min = min;

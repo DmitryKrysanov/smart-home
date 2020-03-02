@@ -1,6 +1,6 @@
 class Home {
     private name: string;
-    private devices: object[];
+    private devices: Array<IDevice>;
 
     constructor(name: string) {
         this.name = name;
@@ -15,32 +15,29 @@ class Home {
         return this.name;
     }
 
-    addDevice(device: object): void {
+    addDevice(device: IDevice): void {
         this.devices.push(device);
     }
 
-    getDevices(): object[] {
+    getDevices(): Array<IDevice> {
         return this.devices;
     }
 
-    selectDeviceByName(name: string): object {
-        return this.devices.find( (device: object) => device['name'] === name )
+    selectDeviceByName(name: string): IDevice {
+        return this.devices.find( device => device.getName() === name )
     }
 
     deviceOn(name: string, delay: number, callback: () => void): void {
-        const device: any = this.selectDeviceByName(name);  //any should be deleted
-        console.log(typeof(device))
         setTimeout(() => {
-            device.on();
-            //callback(device)
+            this.selectDeviceByName(name).on();
+            callback()
         }, delay)
     }
 
-    deviceOff(name: string, delay: number, callback) {
-        const device: any = this.selectDeviceByName(name);  //any should be deleted
+    deviceOff(name: string, delay: number, callback: () => void): void {
         setTimeout(() => {
-            device.off();
-            // callback(device)
+            this.selectDeviceByName(name).off();
+            callback()
         }, delay)
     }
 

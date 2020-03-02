@@ -16,21 +16,18 @@ class Home {
         return this.devices;
     }
     selectDeviceByName(name) {
-        return this.devices.find((device) => device['name'] === name);
+        return this.devices.find(device => device.getName() === name);
     }
     deviceOn(name, delay, callback) {
-        const device = this.selectDeviceByName(name); //any should be deleted
-        console.log(typeof (device));
         setTimeout(() => {
-            device.on();
-            //callback(device)
+            this.selectDeviceByName(name).on();
+            callback();
         }, delay);
     }
     deviceOff(name, delay, callback) {
-        const device = this.selectDeviceByName(name); //any should be deleted
         setTimeout(() => {
-            device.off();
-            // callback(device)
+            this.selectDeviceByName(name).off();
+            callback();
         }, delay);
     }
     removeDevice(name) {
