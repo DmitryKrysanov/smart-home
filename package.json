@@ -1,0 +1,29 @@
+{
+  "name": "smart_house",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "chai": "^4.2.0",
+    "save-dev": "0.0.1-security"
+  },
+  "devDependencies": {
+    "mocha": "^7.1.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DmitryKrysanov/smart-home.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DmitryKrysanov/smart-home/issues"
+  },
+  "homepage": "https://github.com/DmitryKrysanov/smart-home#readme"
+}
