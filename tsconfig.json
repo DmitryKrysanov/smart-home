@@ -2,15 +2,7 @@
     "compilerOptions": {
       "target": "es6",
       "module": "commonjs",
-       "sourceMap": false,
+      //  "sourceMap": false,
        "outDir": "js/"
     }
-
-    // "compilerOptions": {
-    //     "target": "es5",
-    //     "removeComments": true,
-    //     "outDir": "js",
-    //     "sourceMap": true,
-    //     "outFile": "main.js"
-    // }
   }
