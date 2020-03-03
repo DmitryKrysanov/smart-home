@@ -1,35 +1,35 @@
-class RangeTemp {
-    constructor(min, max, current, step) {
+var RangeTemp = /** @class */ (function () {
+    function RangeTemp(min, max, current, step) {
         this.min = min;
         this.max = max;
         this.current = current;
         this.step = step;
     }
-    setMin(min) {
+    RangeTemp.prototype.setMin = function (min) {
         this.min = min;
-    }
-    getMin() {
+    };
+    RangeTemp.prototype.getMin = function () {
         return this.min;
-    }
-    setMax(max) {
+    };
+    RangeTemp.prototype.setMax = function (max) {
         this.max = max;
-    }
-    getMax() {
+    };
+    RangeTemp.prototype.getMax = function () {
         return this.max;
-    }
-    setCurrent(current) {
+    };
+    RangeTemp.prototype.setCurrent = function (current) {
         this.current = current;
-    }
-    getCurrent() {
+    };
+    RangeTemp.prototype.getCurrent = function () {
         return this.current;
-    }
-    setStep(step) {
+    };
+    RangeTemp.prototype.setStep = function (step) {
         this.step = step;
-    }
-    getStep() {
+    };
+    RangeTemp.prototype.getStep = function () {
         return this.step;
-    }
-    increase() {
+    };
+    RangeTemp.prototype.increase = function () {
         if (this.current !== this.max) {
             if ((this.current + this.step) >= this.max) {
                 this.current = this.max;
@@ -38,8 +38,8 @@ class RangeTemp {
                 this.current += this.step;
             }
         }
-    }
-    decrease() {
+    };
+    RangeTemp.prototype.decrease = function () {
         if (this.current !== this.min) {
             if ((this.current - this.step) <= this.min) {
                 this.current = this.min;
@@ -48,5 +48,6 @@ class RangeTemp {
                 this.current -= this.step;
             }
         }
-    }
-}
+    };
+    return RangeTemp;
+}());

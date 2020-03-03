@@ -1,40 +1,43 @@
-class Home {
-    constructor(name) {
+var Home = /** @class */ (function () {
+    function Home(name) {
         this.name = name;
         this.devices = [];
     }
-    setName(name) {
+    Home.prototype.setName = function (name) {
         this.name = name;
-    }
-    getName() {
+    };
+    Home.prototype.getName = function () {
         return this.name;
-    }
-    addDevice(device) {
+    };
+    Home.prototype.addDevice = function (device) {
         this.devices.push(device);
-    }
-    getDevices() {
+    };
+    Home.prototype.getDevices = function () {
         return this.devices;
-    }
-    selectDeviceByName(name) {
-        return this.devices.find(device => device.getName() === name);
-    }
-    deviceOn(name, delay, callback) {
-        setTimeout(() => {
-            this.selectDeviceByName(name).on();
+    };
+    Home.prototype.selectDeviceByName = function (name) {
+        return this.devices.find(function (device) { return device.getName() === name; });
+    };
+    Home.prototype.deviceOn = function (name, delay, callback) {
+        var _this = this;
+        setTimeout(function () {
+            _this.selectDeviceByName(name).on();
             callback();
         }, delay);
-    }
-    deviceOff(name, delay, callback) {
-        setTimeout(() => {
-            this.selectDeviceByName(name).off();
+    };
+    Home.prototype.deviceOff = function (name, delay, callback) {
+        var _this = this;
+        setTimeout(function () {
+            _this.selectDeviceByName(name).off();
             callback();
         }, delay);
-    }
-    removeDevice(name) {
-        const index = this.devices.indexOf(this.selectDeviceByName(name));
+    };
+    Home.prototype.removeDevice = function (name) {
+        var index = this.devices.indexOf(this.selectDeviceByName(name));
         this.devices.splice(index, 1);
-    }
-    removeAllDevices() {
+    };
+    Home.prototype.removeAllDevices = function () {
         this.devices = [];
-    }
-}
+    };
+    return Home;
+}());

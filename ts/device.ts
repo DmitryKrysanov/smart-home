@@ -1,29 +1,29 @@
-class Device implements IDevice {
-    name: string;
-    state: boolean;
+abstract class Device implements IDevice {
+    private name: string;
+    private state: boolean;
 
     constructor(name: string) {
         this.name = name;
         this.state = false;
     }
 
-    setName(name: string): void {
+    public setName(name: string): void {
         this.name = name;
     }
 
-    getName(): string {
+    public getName(): string {
         return this.name;
     }
 
-    on(): void {
+    public on(): void {
         this.state = true;
     }
 
-    off(): void {
+    public off(): void {
         this.state = false;
     }
     
-    getState(): boolean {
+    public getState(): boolean {
         return this.state;
     }
 }

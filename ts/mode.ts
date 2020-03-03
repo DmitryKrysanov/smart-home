@@ -7,19 +7,19 @@ class Mode implements IMode {
         this.current = 0;
     }
 
-    setModes(modes: string[]): void {
+    public setModes(modes: string[]): void {
         this.modes = modes;
     }
 
-    getModes(): string[] {
+    public getModes(): string[] {
         return this.modes;
     }
 
-    getCurrentMode(): string {
+    public getCurrentMode(): string {
         return this.modes[this.current];
     }
 
-    next(): void {
+    public next(): void {
         if (this.current === this.modes.length - 1) {
             this.current = 0;
         } else {
@@ -27,7 +27,7 @@ class Mode implements IMode {
         }
     }
     
-    prev(): void {
+    public prev(): void {
         if (this.current === 0) {
             this.current = this.modes.length - 1;
         } else {

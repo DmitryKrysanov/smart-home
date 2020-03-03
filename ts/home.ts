@@ -7,46 +7,46 @@ class Home {
         this.devices = [];
     }
 
-    setName(name: string): void {
+    public setName(name: string): void {
         this.name = name;
     }
 
-    getName(): string {
+    public getName(): string {
         return this.name;
     }
 
-    addDevice(device: IDevice): void {
+    public addDevice(device: IDevice): void {
         this.devices.push(device);
     }
 
-    getDevices(): Array<IDevice> {
+    public getDevices(): Array<IDevice> {
         return this.devices;
     }
 
-    selectDeviceByName(name: string): IDevice {
+    public selectDeviceByName(name: string): IDevice {
         return this.devices.find( device => device.getName() === name )
     }
 
-    deviceOn(name: string, delay: number, callback: () => void): void {
+    public deviceOn(name: string, delay: number, callback: () => void): void {
         setTimeout(() => {
             this.selectDeviceByName(name).on();
             callback()
         }, delay)
     }
 
-    deviceOff(name: string, delay: number, callback: () => void): void {
+    public deviceOff(name: string, delay: number, callback: () => void): void {
         setTimeout(() => {
             this.selectDeviceByName(name).off();
             callback()
         }, delay)
     }
 
-    removeDevice(name: string): void {
+    public removeDevice(name: string): void {
         const index: number = this.devices.indexOf(this.selectDeviceByName(name));
         this.devices.splice(index, 1);
     }
 
-    removeAllDevices(): void {
+    public removeAllDevices(): void {
         this.devices = [];
     }
 }

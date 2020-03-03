@@ -1,6 +1,6 @@
 class Oven extends Device {
-    temperature: IRange;
-    modes: IMode;
+    private temperature: IRange;
+    private modes: IMode;
 
     constructor(name: string, temperature: IRange, modes: IMode) {
         super(name);
@@ -8,11 +8,11 @@ class Oven extends Device {
         this.modes = modes;
     }
 
-    getTemperature(): IRange {
+    public getTemperature(): IRange {
         return this.temperature;
     }
 
-     getModes(): IMode {
+    public getModes(): IMode {
          return this.modes;
      }
 }

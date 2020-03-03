@@ -1,21 +1,22 @@
-class Device {
-    constructor(name) {
+var Device = /** @class */ (function () {
+    function Device(name) {
         this.name = name;
         this.state = false;
     }
-    setName(name) {
+    Device.prototype.setName = function (name) {
         this.name = name;
-    }
-    getName() {
+    };
+    Device.prototype.getName = function () {
         return this.name;
-    }
-    on() {
+    };
+    Device.prototype.on = function () {
         this.state = true;
-    }
-    off() {
+    };
+    Device.prototype.off = function () {
         this.state = false;
-    }
-    getState() {
+    };
+    Device.prototype.getState = function () {
         return this.state;
-    }
-}
+    };
+    return Device;
+}());

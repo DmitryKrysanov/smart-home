@@ -1,31 +1,32 @@
-class Mode {
-    constructor(modes) {
+var Mode = /** @class */ (function () {
+    function Mode(modes) {
         this.modes = modes;
         this.current = 0;
     }
-    setModes(modes) {
+    Mode.prototype.setModes = function (modes) {
         this.modes = modes;
-    }
-    getModes() {
+    };
+    Mode.prototype.getModes = function () {
         return this.modes;
-    }
-    getCurrentMode() {
+    };
+    Mode.prototype.getCurrentMode = function () {
         return this.modes[this.current];
-    }
-    next() {
+    };
+    Mode.prototype.next = function () {
         if (this.current === this.modes.length - 1) {
             this.current = 0;
         }
         else {
             this.current++;
         }
-    }
-    prev() {
+    };
+    Mode.prototype.prev = function () {
         if (this.current === 0) {
             this.current = this.modes.length - 1;
         }
         else {
             this.current--;
         }
-    }
-}
+    };
+    return Mode;
+}());
