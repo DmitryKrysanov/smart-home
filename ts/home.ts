@@ -23,7 +23,7 @@ class Home {
         return this.devices;
     }
 
-    public selectDeviceByName(name: string): IDevice {
+    public selectDeviceByName(name: string): IDevice | undefined {
         return this.devices.find( device => device.getName() === name )
     }
 
