@@ -5,29 +5,29 @@ var RangeTemp = /** @class */ (function () {
         this.current = current;
         this.step = step;
     }
-    RangeTemp.prototype.setMin = function (min) {
-        this.min = min;
-    };
     RangeTemp.prototype.getMin = function () {
         return this.min;
     };
-    RangeTemp.prototype.setMax = function (max) {
-        this.max = max;
+    RangeTemp.prototype.setMin = function (min) {
+        this.min = min;
     };
     RangeTemp.prototype.getMax = function () {
         return this.max;
     };
-    RangeTemp.prototype.setCurrent = function (current) {
-        this.current = current;
+    RangeTemp.prototype.setMax = function (max) {
+        this.max = max;
     };
     RangeTemp.prototype.getCurrent = function () {
         return this.current;
     };
-    RangeTemp.prototype.setStep = function (step) {
-        this.step = step;
+    RangeTemp.prototype.setCurrent = function (current) {
+        this.current = current;
     };
     RangeTemp.prototype.getStep = function () {
         return this.step;
+    };
+    RangeTemp.prototype.setStep = function (step) {
+        this.step = step;
     };
     RangeTemp.prototype.increase = function () {
         if (this.current !== this.max) {

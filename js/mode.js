@@ -3,11 +3,11 @@ var Mode = /** @class */ (function () {
         this.modes = modes;
         this.current = 0;
     }
-    Mode.prototype.setModes = function (modes) {
-        this.modes = modes;
-    };
     Mode.prototype.getModes = function () {
         return this.modes;
+    };
+    Mode.prototype.setModes = function (modes) {
+        this.modes = modes;
     };
     Mode.prototype.getCurrentMode = function () {
         return this.modes[this.current];

@@ -1,12 +1,12 @@
 interface IRange {
-    setMin(min: number): void;
     getMin(): number;
-    setMax(max: number): void;
+    setMin(min: number): void;
     getMax(): number;
-    setCurrent(current: number): void;
+    setMax(max: number): void;
     getCurrent(): number;
-    setStep(step: number): void;
+    setCurrent(current: number): void;
     getStep(): number;
+    setStep(step: number): void;
     increase(): void;
     decrease(): void;
 }

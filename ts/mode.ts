@@ -7,12 +7,12 @@ class Mode implements IMode {
         this.current = 0;
     }
 
-    public setModes(modes: string[]): void {
-        this.modes = modes;
-    }
-
     public getModes(): string[] {
         return this.modes;
+    }
+
+    public setModes(modes: string[]): void {
+        this.modes = modes;
     }
 
     public getCurrentMode(): string {

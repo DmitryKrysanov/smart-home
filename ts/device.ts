@@ -7,12 +7,16 @@ abstract class Device implements IDevice {
         this.state = false;
     }
 
+    public getName(): string {
+        return this.name;
+    }
+
     public setName(name: string): void {
         this.name = name;
     }
 
-    public getName(): string {
-        return this.name;
+    public getState(): boolean {
+        return this.state;
     }
 
     public on(): void {
@@ -21,9 +25,5 @@ abstract class Device implements IDevice {
 
     public off(): void {
         this.state = false;
-    }
-    
-    public getState(): boolean {
-        return this.state;
     }
 }

@@ -3,17 +3,17 @@ var Home = /** @class */ (function () {
         this.name = name;
         this.devices = [];
     }
-    Home.prototype.setName = function (name) {
-        this.name = name;
-    };
     Home.prototype.getName = function () {
         return this.name;
     };
-    Home.prototype.addDevice = function (device) {
-        this.devices.push(device);
+    Home.prototype.setName = function (name) {
+        this.name = name;
     };
     Home.prototype.getDevices = function () {
         return this.devices;
+    };
+    Home.prototype.addDevice = function (device) {
+        this.devices.push(device);
     };
     Home.prototype.selectDeviceByName = function (name) {
         return this.devices.find(function (device) { return device.getName() === name; });

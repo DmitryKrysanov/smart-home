@@ -7,20 +7,20 @@ class Home {
         this.devices = [];
     }
 
-    public setName(name: string): void {
-        this.name = name;
-    }
-
     public getName(): string {
         return this.name;
     }
 
-    public addDevice(device: IDevice): void {
-        this.devices.push(device);
+    public setName(name: string): void {
+        this.name = name;
     }
 
     public getDevices(): Array<IDevice> {
         return this.devices;
+    }
+
+    public addDevice(device: IDevice): void {
+        this.devices.push(device);
     }
 
     public selectDeviceByName(name: string): IDevice {

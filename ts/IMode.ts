@@ -1,6 +1,6 @@
 interface IMode {
-    setModes(modes: Array<string>): void;
     getModes(): Array<string>;
+    setModes(modes: Array<string>): void;
     getCurrentMode(): string;
     next(): void;
     prev(): void;

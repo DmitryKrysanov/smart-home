@@ -11,36 +11,36 @@ class RangeTemp implements IRange {
         this.step = step;
     }
 
-    public setMin(min: number): void {
-        this.min = min;
-    }
-
     public getMin(): number {
         return this.min;
     }
 
-    public setMax(max: number): void {
-        this.max = max;
+    public setMin(min: number): void {
+        this.min = min;
     }
 
     public getMax(): number {
         return this.max;
     }
 
-    public setCurrent(current: number): void {
-        this.current = current;
+    public setMax(max: number): void {
+        this.max = max;
     }
 
     public getCurrent(): number {
         return this.current;
     }
 
-    public setStep(step: number): void {
-        this.step = step;
+    public setCurrent(current: number): void {
+        this.current = current;
     }
 
     public getStep(): number {
         return this.step;
+    }
+
+    public setStep(step: number): void {
+        this.step = step;
     }
 
     public increase(): void {
