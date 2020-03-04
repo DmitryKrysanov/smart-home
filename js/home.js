@@ -18,19 +18,15 @@ var Home = /** @class */ (function () {
     Home.prototype.selectDeviceByName = function (name) {
         return this.devices.find(function (device) { return device.getName() === name; });
     };
-    Home.prototype.deviceOn = function (name, delay, callback) {
+    Home.prototype.deviceOn = function (name, delay) {
         var _this = this;
-        setTimeout(function () {
-            _this.selectDeviceByName(name).on();
-            callback();
-        }, delay);
+        return new Promise(function (resolve) { return setTimeout(resolve, delay); })
+            .then(function () { return _this.selectDeviceByName(name).on(); });
     };
-    Home.prototype.deviceOff = function (name, delay, callback) {
+    Home.prototype.deviceOff = function (name, delay) {
         var _this = this;
-        setTimeout(function () {
-            _this.selectDeviceByName(name).off();
-            callback();
-        }, delay);
+        return new Promise(function (resolve) { return setTimeout(resolve, delay); })
+            .then(function () { return _this.selectDeviceByName(name).off(); });
     };
     Home.prototype.removeDevice = function (name) {
         var index = this.devices.indexOf(this.selectDeviceByName(name));

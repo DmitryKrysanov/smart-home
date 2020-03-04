@@ -23,22 +23,18 @@ class Home {
         return this.devices;
     }
 
-    public selectDeviceByName(name: string): IDevice | undefined {
-        return this.devices.find( device => device.getName() === name )
+    public selectDeviceByName(name: string): IDevice {
+        return this.devices.find(device => device.getName() === name)
     }
 
-    public deviceOn(name: string, delay: number, callback: () => void): void {
-        setTimeout(() => {
-            this.selectDeviceByName(name).on();
-            callback()
-        }, delay)
+    public deviceOn(name: string, delay: number): Promise<void> {
+        return new Promise<void>(resolve => setTimeout(resolve, delay))
+            .then(() => this.selectDeviceByName(name).on());
     }
 
-    public deviceOff(name: string, delay: number, callback: () => void): void {
-        setTimeout(() => {
-            this.selectDeviceByName(name).off();
-            callback()
-        }, delay)
+    public deviceOff(name: string, delay: number): Promise<void> {
+        return new Promise<void>(resolve => setTimeout(resolve, delay))
+            .then(() => this.selectDeviceByName(name).off());
     }
 
     public removeDevice(name: string): void {

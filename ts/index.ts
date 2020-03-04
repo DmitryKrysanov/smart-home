@@ -3,18 +3,35 @@
 let home = new Home('home')
 
 home.addDevice(new Oven('bosch', new RangeTemp(10, 240, 20, 10), new Mode(['mode1', 'mode2'])));
-//home.addDevice(new WashingMachine('WM', {min: 20, max: 100, current: 10, step: 20}, {modes: ['mode3', 'mode4'], current: 0}))
+//home.addDevice(new WashingMachine('WM', new RangeTemp(20, 100, 10, 20), new Mode(['mode3', 'mode4'])))
 
-home.deviceOn('bosch', 2000, () => {
-    home.deviceOff('bosch', 2000, () => {
-        home.deviceOn('bosch', 2000, () => { 
-            home.deviceOff('bosch', 2000, () => { console.log('off')});
-        })
-    })
- })
+home.deviceOn('bosch', 2000)
+    .then(() => console.log('on'))
+    .then(() => home.deviceOff('bosch', 2000))
+    .then(() => console.log('off'))
+    .then(() => home.deviceOn('bosch', 2000))
+    .then(() => console.log('on'))
 
 
-let oven = new Oven('bosch', new RangeTemp(10, 240, 20, 10), new Mode(['mode1', 'mode2']))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//let oven = new Oven('bosch', new RangeTemp(10, 240, 20, 10), new Mode(['mode1', 'mode2']))
 
 //console.log(oven)
 
@@ -51,3 +68,16 @@ let oven = new Oven('bosch', new RangeTemp(10, 240, 20, 10), new Mode(['mode1', 
 
 // oven.modes.prev();
 // assert.equal(oven.modes.currentMode, 'mode1');
+
+
+
+
+ // public async deviceOn(name: string, delay: number): Promise<void> {
+    //     await new Promise<void>(resolve => setTimeout(resolve, delay));
+    //     this.selectDeviceByName(name).on();
+    // }
+
+    // public async deviceOff(name: string, delay: number): Promise<void> {
+    //     await new Promise<void>(resolve => setTimeout(resolve, delay));
+    //     this.selectDeviceByName(name).off();
+    // }
