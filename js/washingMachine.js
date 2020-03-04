@@ -20,11 +20,11 @@ var WashingMachine = /** @class */ (function (_super) {
         _this.modes = modes;
         return _this;
     }
-    WashingMachine.prototype.setMaxSpinSpeed = function (maxSpinSpeed) {
-        this.maxSpinSpeed = maxSpinSpeed;
-    };
     WashingMachine.prototype.getMaxSpinSpeed = function () {
         return this.maxSpinSpeed;
+    };
+    WashingMachine.prototype.setMaxSpinSpeed = function (maxSpinSpeed) {
+        this.maxSpinSpeed = maxSpinSpeed;
     };
     WashingMachine.prototype.getTemperature = function () {
         return this.temperature;

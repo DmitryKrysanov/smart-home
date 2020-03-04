@@ -1,17 +1,17 @@
 class Mode implements IMode {
-    private modes: string[];
+    private modes: Array<string>;
     private current: number; 
 
-    public constructor(modes: string[]) {
+    public constructor(modes: Array<string>) {
         this.modes = modes;
         this.current = 0;
     }
 
-    public getModes(): string[] {
+    public getModes(): Array<string> {
         return this.modes;
     }
 
-    public setModes(modes: string[]): void {
+    public setModes(modes: Array<string>): void {
         this.modes = modes;
     }
 
