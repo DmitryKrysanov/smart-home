@@ -2,7 +2,7 @@ class Home {
     private name: string;
     private devices: Array<IDevice>;
 
-    constructor(name: string) {
+    public constructor(name: string) {
         this.name = name;
         this.devices = [];
     }
@@ -28,13 +28,17 @@ class Home {
     }
 
     public deviceOn(name: string, delay: number): Promise<void> {
-        return new Promise<void>(resolve => setTimeout(resolve, delay))
-            .then(() => this.selectDeviceByName(name).on());
+        return new Promise(resolve => setTimeout(() => {
+            this.selectDeviceByName(name).on()
+            resolve()
+        }, delay))
     }
 
     public deviceOff(name: string, delay: number): Promise<void> {
-        return new Promise<void>(resolve => setTimeout(resolve, delay))
-            .then(() => this.selectDeviceByName(name).off());
+        return new Promise(resolve => setTimeout(() => {
+            this.selectDeviceByName(name).off()
+            resolve()
+        }, delay))
     }
 
     public removeDevice(name: string): void {

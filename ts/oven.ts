@@ -2,7 +2,7 @@ class Oven extends Device {
     private temperature: IRange;
     private modes: IMode;
 
-    constructor(name: string, temperature: IRange, modes: IMode) {
+    public constructor(name: string, temperature: IRange, modes: IMode) {
         super(name);
         this.temperature = temperature;
         this.modes = modes;

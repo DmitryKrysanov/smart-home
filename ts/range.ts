@@ -4,7 +4,7 @@ class RangeTemp implements IRange {
     private current: number;
     private step: number;
 
-    constructor(min: number, max: number, current: number, step: number) {
+    public constructor(min: number, max: number, current: number, step: number) {
         this.min = min;
         this.max = max;
         this.current = current;

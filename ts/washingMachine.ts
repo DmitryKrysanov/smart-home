@@ -3,7 +3,7 @@ class WashingMachine extends Device {
     private modes: IMode;
     private maxSpinSpeed: number;
     
-    constructor(name: string, temperature: IRange, maxSpinSpeed: number, modes: IMode) {
+    public constructor(name: string, temperature: IRange, maxSpinSpeed: number, modes: IMode) {
         super(name);
         this.maxSpinSpeed = maxSpinSpeed;
         this.temperature = temperature;

@@ -2,7 +2,7 @@ abstract class Device implements IDevice {
     private name: string;
     private state: boolean;
 
-    constructor(name: string) {
+    public constructor(name: string) {
         this.name = name;
         this.state = false;
     }

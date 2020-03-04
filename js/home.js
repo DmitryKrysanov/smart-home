@@ -20,13 +20,17 @@ var Home = /** @class */ (function () {
     };
     Home.prototype.deviceOn = function (name, delay) {
         var _this = this;
-        return new Promise(function (resolve) { return setTimeout(resolve, delay); })
-            .then(function () { return _this.selectDeviceByName(name).on(); });
+        return new Promise(function (resolve) { return setTimeout(function () {
+            _this.selectDeviceByName(name).on();
+            resolve();
+        }, delay); });
     };
     Home.prototype.deviceOff = function (name, delay) {
         var _this = this;
-        return new Promise(function (resolve) { return setTimeout(resolve, delay); })
-            .then(function () { return _this.selectDeviceByName(name).off(); });
+        return new Promise(function (resolve) { return setTimeout(function () {
+            _this.selectDeviceByName(name).off();
+            resolve();
+        }, delay); });
     };
     Home.prototype.removeDevice = function (name) {
         var index = this.devices.indexOf(this.selectDeviceByName(name));
