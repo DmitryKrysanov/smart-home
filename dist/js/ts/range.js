@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var RangeTemp = /** @class */ (function () {
     function RangeTemp(min, max, current, step) {
         this.min = min;
@@ -51,3 +53,4 @@ var RangeTemp = /** @class */ (function () {
     };
     return RangeTemp;
 }());
+exports.default = RangeTemp;

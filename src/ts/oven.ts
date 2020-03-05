@@ -1,4 +1,8 @@
-class Oven extends Device {
+import Device from './device';
+import IRange from './IRange';
+import IMode from './IMode';
+
+export default class Oven extends Device {
     private temperature: IRange;
     private modes: IMode;
 

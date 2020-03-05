@@ -1,4 +1,6 @@
-class Mode implements IMode {
+import IMode from './IMode';
+
+export default class Mode implements IMode {
     private modes: Array<string>;
     private current: number; 
 

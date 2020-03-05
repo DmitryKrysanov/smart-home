@@ -1,4 +1,8 @@
-class WashingMachine extends Device {
+import Device from './device';
+import IRange from './IRange';
+import IMode from './IMode';
+
+export default class WashingMachine extends Device {
     private maxSpinSpeed: number;
     private temperature: IRange;
     private modes: IMode;

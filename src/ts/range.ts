@@ -1,4 +1,6 @@
-class RangeTemp implements IRange {
+import IRange from './IRange';
+
+export default class RangeTemp implements IRange {
     private min: number;
     private max: number;
     private current: number;

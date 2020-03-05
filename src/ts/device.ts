@@ -1,4 +1,6 @@
-abstract class Device implements IDevice {
+import IDevice from './IDevice';
+
+export default abstract class Device implements IDevice {
     private name: string;
     private state: boolean;
 

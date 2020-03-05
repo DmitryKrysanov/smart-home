@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var Home = /** @class */ (function () {
     function Home(name) {
         this.name = name;
@@ -41,3 +43,4 @@ var Home = /** @class */ (function () {
     };
     return Home;
 }());
+exports.default = Home;

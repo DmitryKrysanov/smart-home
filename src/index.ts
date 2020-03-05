@@ -1,3 +1,9 @@
+import Home from './ts/home';
+import Oven from './ts/oven';
+import WashingMachine from './ts/washingMachine';
+import RangeTemp from './ts/range';
+import Mode from './ts/mode';
+
 let home = new Home('home')
 
 home.addDevice(new Oven('bosch', new RangeTemp(10, 240, 20, 10), new Mode(['mode1', 'mode2'])));

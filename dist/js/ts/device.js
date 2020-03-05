@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var Device = /** @class */ (function () {
     function Device(name) {
         this.name = name;
@@ -20,3 +22,4 @@ var Device = /** @class */ (function () {
     };
     return Device;
 }());
+exports.default = Device;

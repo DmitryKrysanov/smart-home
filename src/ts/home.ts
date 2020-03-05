@@ -1,4 +1,6 @@
-class Home {
+import IDevice from './IDevice';
+
+export default class Home {
     private name: string;
     private devices: Array<IDevice>;
 

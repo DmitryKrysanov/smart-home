@@ -1,4 +1,4 @@
-interface IRange {
+export default interface IRange {
     getMin(): number;
     setMin(min: number): void;
     getMax(): number;

@@ -1,4 +1,4 @@
-interface IMode {
+export default interface IMode {
     getModes(): Array<string>;
     setModes(modes: Array<string>): void;
     getCurrentMode(): string;

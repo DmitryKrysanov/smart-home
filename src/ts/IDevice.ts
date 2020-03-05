@@ -1,4 +1,4 @@
-interface IDevice {
+export default interface IDevice {
     getName(): string;
     setName(name: string): void;
     getState(): boolean;

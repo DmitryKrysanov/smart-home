@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var Mode = /** @class */ (function () {
     function Mode(modes) {
         this.modes = modes;
@@ -30,3 +32,4 @@ var Mode = /** @class */ (function () {
     };
     return Mode;
 }());
+exports.default = Mode;
