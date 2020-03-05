@@ -17,6 +17,5 @@
   },
   "homepage": "https://github.com/DmitryKrysanov/smart-home#readme",
   "dependencies": {
-    "chai": "^4.2.0"
   }
 }
