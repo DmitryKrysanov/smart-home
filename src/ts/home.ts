@@ -24,20 +24,20 @@ class Home {
     }
 
     public selectDeviceByName(name: string): IDevice {
-        return this.devices.find(device => device.getName() === name)
+        return this.devices.find(device => device.getName() === name);
     }
 
     public deviceOn(name: string, delay: number): Promise<void> {
         return new Promise(resolve => setTimeout(() => {
-            this.selectDeviceByName(name).on()
-            resolve()
+            this.selectDeviceByName(name).on();
+            resolve();
         }, delay))
     }
 
     public deviceOff(name: string, delay: number): Promise<void> {
         return new Promise(resolve => setTimeout(() => {
-            this.selectDeviceByName(name).off()
-            resolve()
+            this.selectDeviceByName(name).off();
+            resolve();
         }, delay))
     }
 
