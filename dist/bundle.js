@@ -1,1 +1,173 @@
-!function(t){var e={};function n(r){if(e[r])return e[r].exports;var o=e[r]={i:r,l:!1,exports:{}};return t[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}n.m=t,n.c=e,n.d=function(t,e,r){n.o(t,e)||Object.defineProperty(t,e,{enumerable:!0,get:r})},n.r=function(t){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(t,"__esModule",{value:!0})},n.t=function(t,e){if(1&e&&(t=n(t)),8&e)return t;if(4&e&&"object"==typeof t&&t&&t.__esModule)return t;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:t}),2&e&&"string"!=typeof t)for(var o in t)n.d(r,o,function(e){return t[e]}.bind(null,o));return r},n.n=function(t){var e=t&&t.__esModule?function(){return t.default}:function(){return t};return n.d(e,"a",e),e},n.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},n.p="",n(n.s=1)}([function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r=function(){function t(t){this.name=t,this.state=!1}return t.prototype.getName=function(){return this.name},t.prototype.setName=function(t){this.name=t},t.prototype.getState=function(){return this.state},t.prototype.on=function(){this.state=!0},t.prototype.off=function(){this.state=!1},t}();e.default=r},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r=n(2),o=n(3),i=n(4),u=n(5),s=n(6),c=new r.default("home");c.addDevice(new o.default("bosch",new u.default(10,240,20,10),new s.default(["mode1","mode2"]))),c.addDevice(new i.default("WM",new u.default(20,100,10,20),1e3,new s.default(["mode3","mode4"]))),c.deviceOn("bosch",2e3).then((function(){return console.log("on")})).then((function(){return c.deviceOff("bosch",2e3)})).then((function(){return console.log("off")})).then((function(){return c.deviceOn("bosch",2e3)})).then((function(){return console.log("on")}))},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r=function(){function t(t){this.name=t,this.devices=[]}return t.prototype.getName=function(){return this.name},t.prototype.setName=function(t){this.name=t},t.prototype.getDevices=function(){return this.devices},t.prototype.addDevice=function(t){this.devices.push(t)},t.prototype.selectDeviceByName=function(t){return this.devices.find((function(e){return e.getName()===t}))},t.prototype.deviceOn=function(t,e){var n=this;return new Promise((function(r){return setTimeout((function(){n.selectDeviceByName(t).on(),r()}),e)}))},t.prototype.deviceOff=function(t,e){var n=this;return new Promise((function(r){return setTimeout((function(){n.selectDeviceByName(t).off(),r()}),e)}))},t.prototype.removeDevice=function(t){var e=this.devices.indexOf(this.selectDeviceByName(t));this.devices.splice(e,1)},t.prototype.removeAllDevices=function(){this.devices=[]},t}();e.default=r},function(t,e,n){"use strict";var r,o=this&&this.__extends||(r=function(t,e){return(r=Object.setPrototypeOf||{__proto__:[]}instanceof Array&&function(t,e){t.__proto__=e}||function(t,e){for(var n in e)e.hasOwnProperty(n)&&(t[n]=e[n])})(t,e)},function(t,e){function n(){this.constructor=t}r(t,e),t.prototype=null===e?Object.create(e):(n.prototype=e.prototype,new n)});Object.defineProperty(e,"__esModule",{value:!0});var i=function(t){function e(e,n,r){var o=t.call(this,e)||this;return o.temperature=n,o.modes=r,o}return o(e,t),e.prototype.getTemperature=function(){return this.temperature},e.prototype.getModes=function(){return this.modes},e}(n(0).default);e.default=i},function(t,e,n){"use strict";var r,o=this&&this.__extends||(r=function(t,e){return(r=Object.setPrototypeOf||{__proto__:[]}instanceof Array&&function(t,e){t.__proto__=e}||function(t,e){for(var n in e)e.hasOwnProperty(n)&&(t[n]=e[n])})(t,e)},function(t,e){function n(){this.constructor=t}r(t,e),t.prototype=null===e?Object.create(e):(n.prototype=e.prototype,new n)});Object.defineProperty(e,"__esModule",{value:!0});var i=function(t){function e(e,n,r,o){var i=t.call(this,e)||this;return i.maxSpinSpeed=r,i.temperature=n,i.modes=o,i}return o(e,t),e.prototype.getMaxSpinSpeed=function(){return this.maxSpinSpeed},e.prototype.setMaxSpinSpeed=function(t){this.maxSpinSpeed=t},e.prototype.getTemperature=function(){return this.temperature},e.prototype.getModes=function(){return this.modes},e}(n(0).default);e.default=i},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r=function(){function t(t,e,n,r){this.min=t,this.max=e,this.current=n,this.step=r}return t.prototype.getMin=function(){return this.min},t.prototype.setMin=function(t){this.min=t},t.prototype.getMax=function(){return this.max},t.prototype.setMax=function(t){this.max=t},t.prototype.getCurrent=function(){return this.current},t.prototype.setCurrent=function(t){this.current=t},t.prototype.getStep=function(){return this.step},t.prototype.setStep=function(t){this.step=t},t.prototype.increase=function(){this.current!==this.max&&(this.current+this.step>=this.max?this.current=this.max:this.current+=this.step)},t.prototype.decrease=function(){this.current!==this.min&&(this.current-this.step<=this.min?this.current=this.min:this.current-=this.step)},t}();e.default=r},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r=function(){function t(t){this.modes=t,this.current=0}return t.prototype.getModes=function(){return this.modes},t.prototype.setModes=function(t){this.modes=t},t.prototype.getCurrentMode=function(){return this.modes[this.current]},t.prototype.next=function(){this.current===this.modes.length-1?this.current=0:this.current++},t.prototype.prev=function(){0===this.current?this.current=this.modes.length-1:this.current--},t}();e.default=r}]);
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/index.ts");
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./src/index.ts":
+/*!**********************!*\
+  !*** ./src/index.ts ***!
+  \**********************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _ts_home__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ts/home */ \"./src/ts/home.ts\");\n/* harmony import */ var _ts_oven__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ts/oven */ \"./src/ts/oven.ts\");\n/* harmony import */ var _ts_washingMachine__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ts/washingMachine */ \"./src/ts/washingMachine.ts\");\n/* harmony import */ var _ts_components_range__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ts/components/range */ \"./src/ts/components/range.ts\");\n/* harmony import */ var _ts_components_mode__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ts/components/mode */ \"./src/ts/components/mode.ts\");\n\n\n\n\n\nvar home = new _ts_home__WEBPACK_IMPORTED_MODULE_0__[\"default\"]('home');\nhome.addDevice(new _ts_oven__WEBPACK_IMPORTED_MODULE_1__[\"default\"]('bosch', new _ts_components_range__WEBPACK_IMPORTED_MODULE_3__[\"default\"](10, 240, 20, 10), new _ts_components_mode__WEBPACK_IMPORTED_MODULE_4__[\"default\"](['mode1', 'mode2'])));\nhome.addDevice(new _ts_washingMachine__WEBPACK_IMPORTED_MODULE_2__[\"default\"]('WM', new _ts_components_range__WEBPACK_IMPORTED_MODULE_3__[\"default\"](20, 100, 10, 20), 1000, new _ts_components_mode__WEBPACK_IMPORTED_MODULE_4__[\"default\"](['mode3', 'mode4'])));\nhome.deviceOn('bosch', 2000)\n    .then(function () { return console.log('on'); })\n    .then(function () { return home.deviceOff('bosch', 2000); })\n    .then(function () { return console.log('off'); })\n    .then(function () { return home.deviceOn('bosch', 2000); })\n    .then(function () { return console.log('on'); });\n\n\n//# sourceURL=webpack:///./src/index.ts?");
+
+/***/ }),
+
+/***/ "./src/ts/components/mode.ts":
+/*!***********************************!*\
+  !*** ./src/ts/components/mode.ts ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nvar Mode = /** @class */ (function () {\n    function Mode(modes) {\n        this.modes = modes;\n        this.current = 0;\n    }\n    Mode.prototype.getModes = function () {\n        return this.modes;\n    };\n    Mode.prototype.setModes = function (modes) {\n        this.modes = modes;\n    };\n    Mode.prototype.getCurrentMode = function () {\n        return this.modes[this.current];\n    };\n    Mode.prototype.next = function () {\n        if (this.current === this.modes.length - 1) {\n            this.current = 0;\n        }\n        else {\n            this.current++;\n        }\n    };\n    Mode.prototype.prev = function () {\n        if (this.current === 0) {\n            this.current = this.modes.length - 1;\n        }\n        else {\n            this.current--;\n        }\n    };\n    return Mode;\n}());\n/* harmony default export */ __webpack_exports__[\"default\"] = (Mode);\n\n\n//# sourceURL=webpack:///./src/ts/components/mode.ts?");
+
+/***/ }),
+
+/***/ "./src/ts/components/range.ts":
+/*!************************************!*\
+  !*** ./src/ts/components/range.ts ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nvar RangeTemp = /** @class */ (function () {\n    function RangeTemp(min, max, current, step) {\n        this.min = min;\n        this.max = max;\n        this.current = current;\n        this.step = step;\n    }\n    RangeTemp.prototype.getMin = function () {\n        return this.min;\n    };\n    RangeTemp.prototype.setMin = function (min) {\n        this.min = min;\n    };\n    RangeTemp.prototype.getMax = function () {\n        return this.max;\n    };\n    RangeTemp.prototype.setMax = function (max) {\n        this.max = max;\n    };\n    RangeTemp.prototype.getCurrent = function () {\n        return this.current;\n    };\n    RangeTemp.prototype.setCurrent = function (current) {\n        this.current = current;\n    };\n    RangeTemp.prototype.getStep = function () {\n        return this.step;\n    };\n    RangeTemp.prototype.setStep = function (step) {\n        this.step = step;\n    };\n    RangeTemp.prototype.increase = function () {\n        if (this.current !== this.max) {\n            if ((this.current + this.step) >= this.max) {\n                this.current = this.max;\n            }\n            else {\n                this.current += this.step;\n            }\n        }\n    };\n    RangeTemp.prototype.decrease = function () {\n        if (this.current !== this.min) {\n            if ((this.current - this.step) <= this.min) {\n                this.current = this.min;\n            }\n            else {\n                this.current -= this.step;\n            }\n        }\n    };\n    return RangeTemp;\n}());\n/* harmony default export */ __webpack_exports__[\"default\"] = (RangeTemp);\n\n\n//# sourceURL=webpack:///./src/ts/components/range.ts?");
+
+/***/ }),
+
+/***/ "./src/ts/device.ts":
+/*!**************************!*\
+  !*** ./src/ts/device.ts ***!
+  \**************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nvar Device = /** @class */ (function () {\n    function Device(name) {\n        this.name = name;\n        this.state = false;\n    }\n    Device.prototype.getName = function () {\n        return this.name;\n    };\n    Device.prototype.setName = function (name) {\n        this.name = name;\n    };\n    Device.prototype.getState = function () {\n        return this.state;\n    };\n    Device.prototype.on = function () {\n        this.state = true;\n    };\n    Device.prototype.off = function () {\n        this.state = false;\n    };\n    return Device;\n}());\n/* harmony default export */ __webpack_exports__[\"default\"] = (Device);\n\n\n//# sourceURL=webpack:///./src/ts/device.ts?");
+
+/***/ }),
+
+/***/ "./src/ts/home.ts":
+/*!************************!*\
+  !*** ./src/ts/home.ts ***!
+  \************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nvar Home = /** @class */ (function () {\n    function Home(name) {\n        this.name = name;\n        this.devices = [];\n    }\n    Home.prototype.getName = function () {\n        return this.name;\n    };\n    Home.prototype.setName = function (name) {\n        this.name = name;\n    };\n    Home.prototype.getDevices = function () {\n        return this.devices;\n    };\n    Home.prototype.addDevice = function (device) {\n        this.devices.push(device);\n    };\n    Home.prototype.selectDeviceByName = function (name) {\n        return this.devices.find(function (device) { return device.getName() === name; });\n    };\n    Home.prototype.deviceOn = function (name, delay) {\n        var _this = this;\n        return new Promise(function (resolve) { return setTimeout(function () {\n            _this.selectDeviceByName(name).on();\n            resolve();\n        }, delay); });\n    };\n    Home.prototype.deviceOff = function (name, delay) {\n        var _this = this;\n        return new Promise(function (resolve) { return setTimeout(function () {\n            _this.selectDeviceByName(name).off();\n            resolve();\n        }, delay); });\n    };\n    Home.prototype.removeDevice = function (name) {\n        var index = this.devices.indexOf(this.selectDeviceByName(name));\n        this.devices.splice(index, 1);\n    };\n    Home.prototype.removeAllDevices = function () {\n        this.devices = [];\n    };\n    return Home;\n}());\n/* harmony default export */ __webpack_exports__[\"default\"] = (Home);\n\n\n//# sourceURL=webpack:///./src/ts/home.ts?");
+
+/***/ }),
+
+/***/ "./src/ts/oven.ts":
+/*!************************!*\
+  !*** ./src/ts/oven.ts ***!
+  \************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _device__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./device */ \"./src/ts/device.ts\");\nvar __extends = (undefined && undefined.__extends) || (function () {\n    var extendStatics = function (d, b) {\n        extendStatics = Object.setPrototypeOf ||\n            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||\n            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };\n        return extendStatics(d, b);\n    };\n    return function (d, b) {\n        extendStatics(d, b);\n        function __() { this.constructor = d; }\n        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());\n    };\n})();\n\nvar Oven = /** @class */ (function (_super) {\n    __extends(Oven, _super);\n    function Oven(name, temperature, modes) {\n        var _this = _super.call(this, name) || this;\n        _this.temperature = temperature;\n        _this.modes = modes;\n        return _this;\n    }\n    Oven.prototype.getTemperature = function () {\n        return this.temperature;\n    };\n    Oven.prototype.getModes = function () {\n        return this.modes;\n    };\n    return Oven;\n}(_device__WEBPACK_IMPORTED_MODULE_0__[\"default\"]));\n/* harmony default export */ __webpack_exports__[\"default\"] = (Oven);\n\n\n//# sourceURL=webpack:///./src/ts/oven.ts?");
+
+/***/ }),
+
+/***/ "./src/ts/washingMachine.ts":
+/*!**********************************!*\
+  !*** ./src/ts/washingMachine.ts ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _device__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./device */ \"./src/ts/device.ts\");\nvar __extends = (undefined && undefined.__extends) || (function () {\n    var extendStatics = function (d, b) {\n        extendStatics = Object.setPrototypeOf ||\n            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||\n            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };\n        return extendStatics(d, b);\n    };\n    return function (d, b) {\n        extendStatics(d, b);\n        function __() { this.constructor = d; }\n        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());\n    };\n})();\n\nvar WashingMachine = /** @class */ (function (_super) {\n    __extends(WashingMachine, _super);\n    function WashingMachine(name, temperature, maxSpinSpeed, modes) {\n        var _this = _super.call(this, name) || this;\n        _this.maxSpinSpeed = maxSpinSpeed;\n        _this.temperature = temperature;\n        _this.modes = modes;\n        return _this;\n    }\n    WashingMachine.prototype.getMaxSpinSpeed = function () {\n        return this.maxSpinSpeed;\n    };\n    WashingMachine.prototype.setMaxSpinSpeed = function (maxSpinSpeed) {\n        this.maxSpinSpeed = maxSpinSpeed;\n    };\n    WashingMachine.prototype.getTemperature = function () {\n        return this.temperature;\n    };\n    WashingMachine.prototype.getModes = function () {\n        return this.modes;\n    };\n    return WashingMachine;\n}(_device__WEBPACK_IMPORTED_MODULE_0__[\"default\"]));\n/* harmony default export */ __webpack_exports__[\"default\"] = (WashingMachine);\n\n\n//# sourceURL=webpack:///./src/ts/washingMachine.ts?");
+
+/***/ })
+
+/******/ });

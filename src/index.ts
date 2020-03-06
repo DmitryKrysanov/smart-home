@@ -1,8 +1,8 @@
 import Home from './ts/home';
 import Oven from './ts/oven';
 import WashingMachine from './ts/washingMachine';
-import RangeTemp from './ts/range';
-import Mode from './ts/mode';
+import RangeTemp from './ts/components/range';
+import Mode from './ts/components/mode';
 
 let home = new Home('home')
 

@@ -1,6 +1,6 @@
 import Device from './device';
-import IRange from './IRange';
-import IMode from './IMode';
+import IRange from './components/IRange';
+import IMode from './components/IMode';
 
 export default class Oven extends Device {
     private temperature: IRange;
